@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10sp"
+    tools:context="com.example.anuraag.todot.MakeToDo">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designedt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100sp">
+
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:textColor="#0a0" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/pickerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="10sp"
+        android:gravity="top"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edtDate"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="25 Sep,2018"
+            android:onClick="addDate"
+            android:textAlignment="center"
+            tools:ignore="Suspicious0dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\@"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/edtTime"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:hint="10:00 AM"
+            android:onClick="addTime" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtreminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pickerlayout"
+        android:layout_margin="30dp"
+        android:text="Remainder set for Date Month,Year Time"
+        android:textColor="#07f" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtreminder"
+        android:stretchColumns="0"
+        android:layout_margin="10dp">
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="0"
+                android:text="Remind Me "
+                android:textSize="20sp"
+                android:textAlignment="center"/>
+
+            <com.rey.material.widget.Switch
+                android:id="@+id/alertswitch"
+                android:layout_column="0"
+                style="@style/Material.Widget.Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtreminder"
+                android:checked="false"
+                android:gravity="center"
+                />
+
+        </TableRow>
+    </TableLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="10sp"
+        android:onClick="add"
+        android:src="@drawable/ic_send_white_18dp"
+        app:fabSize="normal"
+        app:rippleColor="@color/colorPrimary" />
+
+</RelativeLayout>
